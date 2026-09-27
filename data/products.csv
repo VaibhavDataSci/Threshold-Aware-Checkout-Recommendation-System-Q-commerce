@@ -1,1 +1,51 @@
 product_id,product_name,category,price
+P001,Fresh Milk (500ml),Dairy,30.0
+P002,Toned Milk (1L),Dairy,55.0
+P003,Amul Butter (100g),Dairy,58.0
+P004,Plain Curd (200g),Dairy,25.0
+P005,Paneer (200g),Dairy,85.0
+P006,Cheese Slices (100g),Dairy,75.0
+P007,Flavored Milk (200ml),Dairy,35.0
+P008,Brown Bread,Bakery,45.0
+P009,White Sandwich Bread,Bakery,35.0
+P010,Burger Buns (4 pcs),Bakery,30.0
+P011,Garlic Breadsticks,Bakery,40.0
+P012,Choco Chip Cookies (100g),Bakery,50.0
+P013,Fruit Cake Slice,Bakery,25.0
+P014,Bananas (6 pcs),Fruits,35.0
+P015,Fresh Apples (500g),Fruits,90.0
+P016,Oranges (1 kg),Fruits,80.0
+P017,Green Grapes (250g),Fruits,45.0
+P018,Papaya (1 pc),Fruits,60.0
+P019,Lemon (4 pcs),Fruits,15.0
+P020,Tomatoes (500g),Vegetables,25.0
+P021,Onions (1 kg),Vegetables,35.0
+P022,Potatoes (1 kg),Vegetables,30.0
+P023,Fresh Coriander (100g),Vegetables,10.0
+P024,Green Chillies (100g),Vegetables,12.0
+P025,Cucumber (500g),Vegetables,20.0
+P026,Potato Chips (Small),Snacks,10.0
+P027,Potato Chips (Medium),Snacks,20.0
+P028,Marie Gold Biscuits,Snacks,15.0
+P029,Bourbon Chocolate Biscuits,Snacks,30.0
+P030,Dark Chocolate Bar,Snacks,40.0
+P031,Salted Peanuts (100g),Snacks,25.0
+P032,Instant Noodles (Single Pack),Snacks,14.0
+P033,Mango Juice (250ml),Beverages,20.0
+P034,Orange Juice (1L),Beverages,110.0
+P035,Cola Soft Drink (600ml),Beverages,38.0
+P036,Lemon Soda (300ml),Beverages,20.0
+P037,Cold Coffee Can (240ml),Beverages,65.0
+P038,Basmati Rice (1 kg),Staples,120.0
+P039,Whole Wheat Atta (1 kg),Staples,55.0
+P040,Refined Sugar (1 kg),Staples,48.0
+P041,Iodized Salt (1 kg),Staples,28.0
+P042,Toor Dal (500g),Staples,75.0
+P043,Bathing Soap (Single),Personal Care,35.0
+P044,Herbal Toothpaste (100g),Personal Care,60.0
+P045,Hand Wash Refill (200ml),Personal Care,45.0
+P046,Pocket Tissues (10 pcs),Personal Care,15.0
+P047,Dishwash Bar,Household,15.0
+P048,Liquid Dishwash (250ml),Household,55.0
+P049,Garbage Bags (30 pcs),Household,65.0
+P050,Kitchen Sponge,Household,20.0

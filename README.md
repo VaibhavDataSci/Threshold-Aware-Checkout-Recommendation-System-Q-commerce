@@ -51,7 +51,23 @@ Threshold-Aware-Checkout-Recommendation-System-Q-commerce/
 
 ---
 
-## 4. Deep Learning Model Summary
+## 4. Synthetic Dataset Overview
+
+The dataset is programmatically generated via [`data/generate_dataset.py`](file:///Users/VAIBHAV/Desktop/Threshold-Aware-Checkout-Recommendation-System-Q-commerce/data/generate_dataset.py) using a fixed random seed (`SEED=42`) for 100% reproducibility.
+
+### Dataset Rationale & Characteristics
+- **No External Dependency:** Academic MVP relies strictly on reproducible synthetic quick-commerce data.
+- **Realistic Pricing & Threshold Support:** Products range from ₹10 to ₹120 (Mean: ₹41.76), with 45 low-cost products ($\le$ ₹75) specifically available to satisfy various threshold gaps for the ₹150 free delivery goal.
+- **Behavioral Personas:** 100 synthetic users divided into 6 preference personas (Dairy/Bakery, Fruits/Vegetables, Snacks/Beverages, Staples/Household, Personal Care/Household, and Mixed) to provide learnable user-item preference patterns for deep learning.
+
+### Statistics
+- **Users:** 100 (`U001` - `U100`)
+- **Products:** 50 (`P001` - `P050`) across 9 categories (Dairy, Bakery, Fruits, Vegetables, Snacks, Beverages, Staples, Personal Care, Household)
+- **Interactions:** 1,832 interactions (`purchase`: 1,115, `add_to_cart`: 463, `view`: 254)
+
+---
+
+## 5. Deep Learning Model Summary
 
 - **Architecture:** Embedding-based Neural Recommendation Model.
 - **Inputs:** User ID & Product ID embeddings.
@@ -60,29 +76,32 @@ Threshold-Aware-Checkout-Recommendation-System-Q-commerce/
 
 ---
 
-## 5. Ranking Strategy
+## 6. Ranking Strategy
 
 $$\text{Final Score} = 0.7 \times \text{Neural Relevance Score} + 0.3 \times \text{Threshold Gap Proximity Score}$$
 
 ---
 
-## 6. How to Run
+## 7. How to Run
 
-### Setup Environment
+### Setup Environment & Generate Data
 ```bash
 # Copy environment configuration
 cp .env.example .env
 
 # Install requirements
 pip install -r requirements.txt
+
+# Generate reproducible synthetic dataset
+python3 data/generate_dataset.py
 ```
 
 ---
 
-## 7. Development Status
+## 8. Development Status
 - [x] **Phase 1:** Project Foundation & Directory Scaffolding
-- [ ] **Phase 2:** Synthetic Dataset Generation
-- [ ] **Phase 3:** Data Preprocessing & Tensor Preparation
+- [x] **Phase 2:** Synthetic Dataset Generation
+- [x] **Phase 3:** Data Preprocessing & Tensor Preparation
 - [ ] **Phase 4:** Deep Learning Model Architecture & Training
 - [ ] **Phase 5:** Model Evaluation & Metrics
 - [ ] **Phase 6:** Threshold & Cart Logic Implementation
