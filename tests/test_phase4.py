@@ -7,6 +7,7 @@ and prediction behavior.
 import sys
 import os
 import torch
+import numpy as np
 
 # Add root directory to sys.path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

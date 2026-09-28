@@ -57,3 +57,46 @@ def get_threshold_status(cart_total, threshold=FREE_DELIVERY_THRESHOLD):
     else:
         gap = calculate_threshold_gap(cart_total, threshold=threshold)
         return f"You are ₹{gap:.2f} away from free delivery."
+
+def get_initial_cart(user_id, products_df, interactions_df):
+    """
+    Generates a deterministic initial cart for a given user.
+    - Users U001-U099: Deterministic items totaling < ₹150 (approx ₹90-₹120) to demonstrate recommendation flow.
+    - User U100: Deterministic items totaling >= ₹150 to demonstrate unlocked state immediately.
+    """
+    if interactions_df.empty or products_df.empty:
+        return ["P001", "P009"]
+
+    user_purchases = interactions_df[
+        (interactions_df['user_id'] == user_id) & 
+        (interactions_df['interaction'] == 'purchase')
+    ]['product_id'].tolist()
+
+    if not user_purchases:
+        return ["P001", "P009"]
+
+    price_map = products_df.set_index('product_id')['price'].to_dict()
+
+    if user_id == "U100":
+        cart = []
+        total = 0.0
+        for pid in user_purchases:
+            cart.append(pid)
+            total += price_map.get(pid, 0.0)
+            if total >= 150.0:
+                break
+        return cart
+    else:
+        cart = []
+        total = 0.0
+        for pid in user_purchases:
+            item_price = price_map.get(pid, 0.0)
+            if total + item_price < 150.0:
+                cart.append(pid)
+                total += item_price
+            if total >= 90.0 or len(cart) >= 3:
+                break
+        if not cart:
+            cart = [user_purchases[0]]
+        return cart
+
